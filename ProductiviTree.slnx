@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="Business_Logic_Layer/Business_Logic_Layer.csproj" />
-  <Project Path="Data_Access_Layer/Data_Access_Layer.csproj" />
-  <Project Path="UI_Layer/UI_Layer.csproj" />
+  <Project Path="Business_Logic_Layer/Business_Logic_Layer.csproj" Id="971ce581-aff0-4a24-aed0-fea57d1f5cb6" />
+  <Project Path="Data_Access_Layer/Data_Access_Layer.csproj" Id="6486ac1b-5aa2-46b7-a675-e523c3a5a33d" />
+  <Project Path="UI_Layer/UI_Layer.csproj" Id="957cecf0-1ba0-4a93-8df4-eae18c57ec7b" />
 </Solution>
