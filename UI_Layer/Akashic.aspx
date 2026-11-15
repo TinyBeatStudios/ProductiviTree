@@ -8,6 +8,8 @@
             min-height: 50vh;
             bottom: 0px;
             justify-content: center;
+            background: url('~/Images/Questbook.png') no-repeat center center;
+            background-size: cover;
         }
     </style>
     
@@ -19,7 +21,3 @@
     </div>
 
 </asp:Content>
-
-
-
-
