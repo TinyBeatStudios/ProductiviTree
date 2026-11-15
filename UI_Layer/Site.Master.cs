@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Business_Logic_Layer;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,5 +14,17 @@ namespace UI_Layer
         {
 
         }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            string css = "default.css";
+            int? userId = Session["UserId"] as int?;
+            if (userId.HasValue)
+            {
+                css = new ShopService().GetThemeCssFile(userId.Value);
+            }
+            ThemeLink.Href = ResolveUrl("~/Themes/" + css);
+        }
+
     }
 }

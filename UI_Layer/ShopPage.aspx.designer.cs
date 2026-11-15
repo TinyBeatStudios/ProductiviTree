@@ -13,5 +13,32 @@ namespace UI_Layer
 
     public partial class ShopPage
     {
+
+        /// <summary>
+        /// BalanceLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BalanceLabel;
+
+        /// <summary>
+        /// MessageLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MessageLabel;
+
+        /// <summary>
+        /// ShopRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater ShopRepeater;
     }
 }

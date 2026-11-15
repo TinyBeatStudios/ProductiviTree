@@ -1,0 +1,30 @@
+﻿:root {
+    --bg: #eef5ec;
+    --text: #1f3a2a;
+    --card: #ffffff;
+    --accent: #2f7d4f;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.navbar-inverse {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.shop-card {
+    background-color: var(--card);
+    border: 1px solid var(--accent);
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+a {
+    color: var(--accent);
+}
