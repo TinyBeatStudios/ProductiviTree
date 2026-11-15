@@ -43,6 +43,7 @@
   <ItemGroup>
 	<Compile Include="AkashicBLL.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="ShopService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
