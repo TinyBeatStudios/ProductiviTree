@@ -19,3 +19,16 @@ textarea {
         padding: 0;
     }
 }
+
+.shop-card {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.shop-message {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+}
