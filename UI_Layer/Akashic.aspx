@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="Akashic.aspx.cs" Inherits="UI_Layer.WebForm1" %>
+﻿<%@ Page Title="Task List" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="Akashic.aspx.cs" Inherits="UI_Layer.WebForm1" %>
 
 <asp:Content ID = "Akashic" ContentPlaceHolderID="MainContent" runat="server">
     <style>
