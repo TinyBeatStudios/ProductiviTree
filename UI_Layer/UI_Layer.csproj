@@ -124,6 +124,8 @@
     <Content Include="Global.asax" />
     <Content Include="Images\Questbook.png" />
     <Content Include="Login.aspx" />
+    <Content Include="Pomodoro.aspx" />
+    <Content Include="pomodoro.js" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -224,6 +226,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pomodoro.aspx.cs">
+      <DependentUpon>Pomodoro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pomodoro.aspx.designer.cs">
+      <DependentUpon>Pomodoro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
