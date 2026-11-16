@@ -17,14 +17,8 @@ namespace UI_Layer
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            string css = "default.css";
-            int? userId = Session["UserId"] as int?;
-            if (userId.HasValue)
-            {
-                css = new ShopService().GetThemeCssFile(userId.Value);
-            }
-            ThemeLink.Href = ResolveUrl("~/Themes/" + css);
+            int userId = (Session["UserId"] as int?) ?? 1;
+            ThemeLink.Href = ResolveUrl("~/Themes/" + new ShopService().GetThemeCssFile(userId));
         }
-
     }
 }
