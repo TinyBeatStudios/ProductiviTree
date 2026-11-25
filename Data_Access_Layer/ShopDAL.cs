@@ -15,6 +15,7 @@ namespace Data_Access_Layer
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string CssFile { get; set; }
+        public string ItemType { get; set; }
     }
 
     public class ShopDAL
@@ -32,7 +33,7 @@ namespace Data_Access_Layer
             var shopItems = new List<ShopItemData>();
             using (var conn = new SqlConnection(ConnStr))
             using (var cmd = new SqlCommand(
-                "SELECT ItemId, Name, Description, Price, CssFile FROM SHOP_ITEMS ORDER BY Price", conn))
+                "SELECT ItemId, Name, Description, Price, CssFile, ItemType FROM SHOP_ITEMS ORDER BY Price", conn))
             {
                 conn.Open();
                 using (var reader = cmd.ExecuteReader())
@@ -45,7 +46,8 @@ namespace Data_Access_Layer
                             Name = (string)reader["Name"],
                             Description = (string)reader["Description"],
                             Price = (int)reader["Price"],
-                            CssFile = (string)reader["CssFile"]
+                            CssFile = (string)reader["CssFile"],
+                            ItemType = (string)reader["ItemType"]
                         });
                     }
                 }

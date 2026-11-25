@@ -22,6 +22,7 @@ namespace Business_Logic_Layer
         public string Description { get; set; }
         public int Price { get; set; }
         public string CssFile { get; set; }
+        public string ItemType { get; set; }
         public bool Owned { get; set; }
         public bool Equipped { get; set; }
     }
@@ -43,6 +44,7 @@ namespace Business_Logic_Layer
                 Description = i.Description,
                 Price = (int)i.Price,
                 CssFile = i.CssFile,
+                ItemType = i.ItemType,
                 Owned = i.Price == 0 || owned.Contains(i.ItemId),
                 Equipped = equipped == i.ItemId
             }).ToList();

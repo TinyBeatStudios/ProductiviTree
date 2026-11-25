@@ -20,11 +20,86 @@ textarea {
     }
 }
 
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 160px));
+    gap: 12px;
+}
+
+.shop-details summary {
+    cursor: pointer;
+    text-align: left;
+}
+
 .shop-card {
+    text-align: left;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 15px;
-    margin: 10px 0;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 0;
+}
+
+.shop-card p {
+    flex-grow: 1;
+}
+
+.shop-card-title {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    overflow-wrap: anywhere
+}
+
+.shop-card-price {
+    display: block;
+    margin-top:0.25rem;
+    font-size:0.8rem;
+    font-style: italic;
+}
+
+.shop-card-description {
+    margin: 0.75rem 0;
+    font-size: 0.8rem;
+    line-height: 1.35;
+    text-align: left;
+}
+
+.shop-card-actions {
+    width: 100%;
+    min-height: 38px;
+    margin-top: auto;
+    padding-top: 0.4rem;
+}
+
+.shop-card-actions .btn, .shop-equipped-label {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.shop-card-actions .btn {
+    margin-top: 0;
+}
+
+.shop-equipped-label {
+    font-size: 0.875rem;
+}
+
+.shop-section {
+    margin-top: 2rem;
+}
+
+.shop-section h2 {
+    margin-bottom: 1rem;
 }
 
 .shop-message {

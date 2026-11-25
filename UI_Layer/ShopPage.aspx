@@ -5,18 +5,35 @@
     <p> Your Balance: <asp:Label ID="BalanceLabel" runat="server" /> coins</p>
     <asp:Label ID="MessageLabel" runat="server" CssClass="shop-message" />
 
-    <asp:Repeater ID="ShopRepeater" runat="server" OnItemCommand="ShopRepeater_ItemCommand">
+    
+    <asp:Repeater ID="CategoryRepeater" runat="server" OnItemDataBound="CategoryRepeater_ItemDataBound">
         <ItemTemplate>
-            <div class="shop-card">
-                <h3><%# Eval("Name") %></h3>
-                <p><%# Eval("Description") %></p>
+            <section class="shop-section">
+                <h2><%# Eval("Key") %></h2>
+            
+    
+                <div class="shop-grid">
+                    <asp:Repeater ID="CategoryItemsRepeater" runat="server" OnItemCommand="CategoryItemsRepeater_ItemCommand">
+                        <ItemTemplate>
+                            <div class="shop-card">
 
-                <asp:Button runat="server" CssClass="btn btn-primary" Text='<%# "Buy for " + Eval("Price") + " coins" %>' CommandName="Buy" CommandArgument='<%# Eval("ItemId") %>' Visible='<%# !(bool)Eval("Owned") %>' />
+                                <span class="shop-card-title"><%# Eval("Name") %></span>
+                                <span class="shop-card-price"><%# Eval("Price") %> coins</span>
 
-                <asp:Button runat="server" CssClass="btn btn-default" Text="Equip" CommandName="Equip" CommandArgument='<%# Eval("ItemId") %>' Visible='<%# (bool)Eval("Owned") && !(bool)Eval("Equipped") %>' />
+                                <p class="shop-card-description"><%# Eval("Description") %></p>
 
-                <asp:Label runat="server" Text ="✔ Equipped" Visible='<%# (bool)Eval("Equipped") %>' />
-            </div>
+                                <div class="shop-card-actions">
+                                    <asp:Button runat="server" CssClass="btn btn-primary" Text='<%# Eval("Price") + " coins" %>' CommandName="Buy" CommandArgument='<%# Eval("ItemId") %>' Visible='<%# !(bool)Eval("Owned") %>' />
+
+                                    <asp:Button runat="server" CssClass="btn btn-default" Text="Equip" CommandName="Equip" CommandArgument='<%# Eval("ItemId") %>' Visible='<%# (bool)Eval("Owned") && !(bool)Eval("Equipped") %>' />
+
+                                    <asp:Label runat="server" CssClass="shop-equipped-label" Text ="✔ Equipped" Visible='<%# (bool)Eval("Equipped") %>' />
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </section>
         </ItemTemplate>
     </asp:Repeater>
 </asp:Content>

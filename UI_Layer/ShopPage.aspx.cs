@@ -32,7 +32,7 @@ namespace UI_Layer
             }
         }
 
-        protected void ShopRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        protected void CategoryItemsRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             int itemId = int.Parse((string)e.CommandArgument);
 
@@ -62,11 +62,31 @@ namespace UI_Layer
             BindShop();
         }
 
+        protected void CategoryRepeater_ItemDataBound(
+            object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType != ListItemType.Item &&
+                e.Item.ItemType != ListItemType.AlternatingItem)
+            {
+                return;
+            }
+
+            var group = (IGrouping<string, ShopItemView>)e.Item.DataItem;
+            var itemsRepeater =
+                (Repeater)e.Item.FindControl("CategoryItemsRepeater");
+
+            itemsRepeater.DataSource = group;
+            itemsRepeater.DataBind();
+        }
+
         private void BindShop()
         {
             BalanceLabel.Text = _shopService.GetCurrency(CurrentUserId).ToString();
-            ShopRepeater.DataSource = _shopService.GetShopItems(CurrentUserId);
-            ShopRepeater.DataBind();
+            var groups = _shopService.GetShopItems(CurrentUserId)
+                .GroupBy(i => i.ItemType);
+            
+            CategoryRepeater.DataSource = groups;
+            CategoryRepeater.DataBind();
         }
 
 
