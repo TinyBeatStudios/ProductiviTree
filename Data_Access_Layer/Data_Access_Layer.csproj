@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AkashicDAL.cs" />
+    <Compile Include="AuthDAL.cs" />
     <Compile Include="ShopDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

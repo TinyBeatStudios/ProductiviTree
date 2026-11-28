@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AkashicBLL.cs" />
+    <Compile Include="Security\PasswordHasher.cs" />
     <Compile Include="ShopService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

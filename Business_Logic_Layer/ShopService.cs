@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Data_Access_Layer;
+using Business_Logic_Layer.Security;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -85,6 +86,43 @@ namespace Business_Logic_Layer
         }
 
 
+    }
+
+    public class AuthService
+    {
+        private readonly AuthDAL _authDAL = new AuthDAL();
+
+        public bool UserExists(string username, string email)
+        {
+            return _authDAL.UserExists(username, email);
+        }
+
+        public int CreateUser(string username, string email, string passwordHash)
+        {
+            return _authDAL.CreateUser(username, email, passwordHash);
+        }
+
+        public AuthenticatedUser AuthenticateUser(string username, string password)
+        {
+            Data_Access_Layer.AuthUser user = _authDAL.GetUser(username);
+
+            if (user == null || !PasswordHasher.Verify(password, user.PasswordHash))
+            {
+                return null;
+            }
+
+            return new AuthenticatedUser
+            {
+                UserId = user.UserId,
+                Username = user.Username
+            };
+        }
+    }
+
+    public class AuthenticatedUser
+    {
+        public int UserId { get; set; }
+        public string Username { get; set; }
     }
 
 }

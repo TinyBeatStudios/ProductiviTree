@@ -13,7 +13,7 @@
         <asp:Label runat="server" AssociatedControlID="password" Text="Password:"></asp:Label>
         <asp:TextBox ID="password" runat="server" TextMode="Password"></asp:TextBox>
         <br />
-        <asp:Button ID="loginButton" runat="server" Text="Login"/>
+        <asp:Button ID="loginButton" runat="server" Text="Login" OnClick="loginButton_Click"/>
     </div>
 
     <p>Dont have an account? <a runat="server" href="~/Register.aspx">Register Here!</a>.</p>

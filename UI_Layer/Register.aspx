@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="UI_Layer.Register" %>
+﻿ <%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="UI_Layer.Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -17,7 +17,7 @@
         <asp:Label runat="server" AssociatedControlID="confirm_password" Text="Confirm Password:"></asp:Label>
         <asp:TextBox ID="confirm_password" runat="server" TextMode="Password"></asp:TextBox>
         <br />
-        <asp:Button ID="registerButton" runat="server" Text="Register"/>
+        <asp:Button ID="registerButton" runat="server" Text="Register" OnClick="registerButton_Click"/>
     </div>
 
     <p>Already have an account? <a runat="server" href="~/Login.aspx">Login here!</a>.</p>
