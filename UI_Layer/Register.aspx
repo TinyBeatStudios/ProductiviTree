@@ -1,28 +1,24 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="UI_Layer.Register" %>
+﻿ <%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="UI_Layer.Register" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
- <!DOCTYPE html>
-<html xmlns ="http://www.w3.org/2000/svg">
-    <meta charset="utf-8" />
-    <title>ProductiviTree</title>
-<body>
     <h1>Register for ProductiviTree</h1>
-    <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" />
+
+    <div class="auth-container">
+        <asp:Label runat="server" AssociatedControlID="username" Text="Username:"></asp:Label>
+        <asp:TextBox ID="username" runat="server"></asp:TextBox>
         <br />
-        <label for="email">Email:       </label>
-        <input type="email" id="email" name="email" />
+        <asp:Label runat="server" AssociatedControlID="email" Text="Email:"></asp:Label>
+        <asp:TextBox ID="email" runat="server" TextMode="Email"></asp:TextBox>
         <br />
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" />
+        <asp:Label runat="server" AssociatedControlID="password" Text="Password:"></asp:Label>
+        <asp:TextBox ID="password" runat="server" TextMode="Password"></asp:TextBox>
         <br />
-        <label for="confirm_password">Confirm Password:</label>
-        <input type="password" id="confirm_password" name="confirm_password" />
+        <asp:Label runat="server" AssociatedControlID="confirm_password" Text="Confirm Password:"></asp:Label>
+        <asp:TextBox ID="confirm_password" runat="server" TextMode="Password"></asp:TextBox>
         <br />
-        <input type="submit" value="Register" />
-    </form>
-    <p>Already have an account? <a href="Login.aspx">Login here</a>.</p>
-</body>
-</html>
+        <asp:Button ID="registerButton" runat="server" Text="Register" OnClick="registerButton_Click"/>
+    </div>
+
+    <p>Already have an account? <a runat="server" href="~/Login.aspx">Login here!</a>.</p>
 </asp:Content>

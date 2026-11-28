@@ -11,7 +11,7 @@ namespace UI_Layer
 {
 
 
-    public partial class _Default
+    public partial class Pomodoro
     {
     }
 }
